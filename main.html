@@ -58,14 +58,15 @@
       };
     }
 	  function addSlide(){
-		  var scrolledImages = document.querySelectorAll(".slide-in");
+		  var scrolledImages = document.querySelectorAll('.slide-in');
 		  scrolledImages.forEach((img) => {
 			  var scrolledHeight = window.scrollY + window.innerHeight - img.height/2;
+			  
 			  var imageBottomHeight = img.offsetTop +img.height;
 			  var isImageHalfScrolled = scrolledHeight>img.offsetTop;
 			  var isImageFullyScrolled = window.scrollY>imageBottomHeight;
 
-			  if(isImageFullyScrolled && !isImageFullyScrolled)
+			  if(isImageHalfScrolled && !isImageFullyScrolled)
 			  {
 				  img.classList.add("active");
 			  }
